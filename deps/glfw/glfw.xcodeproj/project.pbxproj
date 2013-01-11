@@ -1,0 +1,285 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		13AA2D4463520CD351A986A6 /* cocoa_init.m in Sources */ = {isa = PBXBuildFile; fileRef = 70CDF78E2CA38BC103E236FE /* cocoa_init.m */; };
+		13F03520145F70C9810E4DE7 /* glext.c in Sources */ = {isa = PBXBuildFile; fileRef = 8726D6C9D3B8FFCB3DF6E416 /* glext.c */; };
+		1A4E5665A517C00178BA9965 /* cocoa_time.m in Sources */ = {isa = PBXBuildFile; fileRef = 16CDB1554AECEC1D4D13A8B2 /* cocoa_time.m */; };
+		1CD7F5568A94956C5613D093 /* init.c in Sources */ = {isa = PBXBuildFile; fileRef = 45C2AB8BEB274988F86AA2B8 /* init.c */; };
+		1EDC3B8A6C69AFC13F14DD21 /* cocoa_joystick.m in Sources */ = {isa = PBXBuildFile; fileRef = 6000CFFDBB7E0E6176B0B481 /* cocoa_joystick.m */; };
+		293E71830638F88FE7290999 /* joystick.c in Sources */ = {isa = PBXBuildFile; fileRef = C519264552F7A5BC67DD4E98 /* joystick.c */; };
+		3385BF54E3C4EAF222CAB336 /* cocoa_glext.m in Sources */ = {isa = PBXBuildFile; fileRef = EA58C16CAB3CE5EEC84BDEB1 /* cocoa_glext.m */; };
+		367C445CAAFF59B46FD732A9 /* stream.c in Sources */ = {isa = PBXBuildFile; fileRef = A617D66790FA91E1B517AE6B /* stream.c */; };
+		4EAA03B459178C12736AB3E0 /* cocoa_enable.m in Sources */ = {isa = PBXBuildFile; fileRef = 3988EC847A700F788F30B3D0 /* cocoa_enable.m */; };
+		54DFB510C9E388B132D468F8 /* cocoa_window.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E69E11C91502C5283165935 /* cocoa_window.m */; };
+		5C286501113F95C642D3120A /* cocoa_fullscreen.m in Sources */ = {isa = PBXBuildFile; fileRef = E01C34727C77D64A6C028B38 /* cocoa_fullscreen.m */; };
+		67593282155267E80D683973 /* cocoa_thread.c in Sources */ = {isa = PBXBuildFile; fileRef = 5058F2DA8720F22CC714F34C /* cocoa_thread.c */; };
+		8D70DF9374D32D8E111D83B0 /* fullscreen.c in Sources */ = {isa = PBXBuildFile; fileRef = A60E6F89E1D336BA944446A8 /* fullscreen.c */; };
+		9CF6C32F2C59DC4B58952E51 /* tga.c in Sources */ = {isa = PBXBuildFile; fileRef = E93EC45C13DEF032421FFAB7 /* tga.c */; };
+		A059F201B392CBAAC51D14D8 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E84B219B5E483572F11C5F33 /* IOKit.framework */; };
+		B9EA15529652899A509F6769 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C00656DFE737F324A2C5DD19 /* Cocoa.framework */; };
+		BC0E1E39DC95E2106D3D0AE4 /* window.c in Sources */ = {isa = PBXBuildFile; fileRef = 81402ACE9AFBA33F1184AC4B /* window.c */; };
+		BFE3AFC9A711319C325DD50F /* thread.c in Sources */ = {isa = PBXBuildFile; fileRef = 850104DFCCEC33E61363F8B4 /* thread.c */; };
+		C5F7F89845C77FF4738C4897 /* image.c in Sources */ = {isa = PBXBuildFile; fileRef = 03AD84890337A27F100D0A3F /* image.c */; };
+		CB861EB0CF5988F22E8B8C31 /* input.c in Sources */ = {isa = PBXBuildFile; fileRef = 1D37B8748775DD2A428398B9 /* input.c */; };
+		EFED022B3E3274E843B82FEE /* time.c in Sources */ = {isa = PBXBuildFile; fileRef = 4AA0710B170D79B2AC363856 /* time.c */; };
+		F4958388072814BCB72ADFF1 /* enable.c in Sources */ = {isa = PBXBuildFile; fileRef = AE030602F53DE21F14BA5FF1 /* enable.c */; };
+		F7C7FC636BE6A7E1AADB4BCE /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 829DD47984A8B03A6DD86BC5 /* OpenGL.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		03155BA1B7E5AE5576E636BB /* glfw.gyp */ = {isa = PBXFileReference; lastKnownFileType = text; path = glfw.gyp; sourceTree = "<group>"; };
+		03AD84890337A27F100D0A3F /* image.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = image.c; sourceTree = "<group>"; };
+		16CDB1554AECEC1D4D13A8B2 /* cocoa_time.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = cocoa_time.m; sourceTree = "<group>"; };
+		1D37B8748775DD2A428398B9 /* input.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = input.c; sourceTree = "<group>"; };
+		3988EC847A700F788F30B3D0 /* cocoa_enable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = cocoa_enable.m; sourceTree = "<group>"; };
+		45C2AB8BEB274988F86AA2B8 /* init.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = init.c; sourceTree = "<group>"; };
+		4AA0710B170D79B2AC363856 /* time.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = time.c; sourceTree = "<group>"; };
+		5058F2DA8720F22CC714F34C /* cocoa_thread.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = cocoa_thread.c; sourceTree = "<group>"; };
+		6000CFFDBB7E0E6176B0B481 /* cocoa_joystick.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = cocoa_joystick.m; sourceTree = "<group>"; };
+		70CDF78E2CA38BC103E236FE /* cocoa_init.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = cocoa_init.m; sourceTree = "<group>"; };
+		81402ACE9AFBA33F1184AC4B /* window.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = window.c; sourceTree = "<group>"; };
+		829DD47984A8B03A6DD86BC5 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		850104DFCCEC33E61363F8B4 /* thread.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = thread.c; sourceTree = "<group>"; };
+		8726D6C9D3B8FFCB3DF6E416 /* glext.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = glext.c; sourceTree = "<group>"; };
+		8E69E11C91502C5283165935 /* cocoa_window.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = cocoa_window.m; sourceTree = "<group>"; };
+		A60E6F89E1D336BA944446A8 /* fullscreen.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = fullscreen.c; sourceTree = "<group>"; };
+		A617D66790FA91E1B517AE6B /* stream.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = stream.c; sourceTree = "<group>"; };
+		AE030602F53DE21F14BA5FF1 /* enable.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = enable.c; sourceTree = "<group>"; };
+		B6993B54CE70473A71C17B7D /* platform.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = platform.h; sourceTree = "<group>"; };
+		B734A2E3F5CB1966EC1CDCCC /* glfw.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = glfw.h; sourceTree = "<group>"; };
+		BD1BF14A8815B97D51E3035D /* libglfw.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libglfw.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C00656DFE737F324A2C5DD19 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		C519264552F7A5BC67DD4E98 /* joystick.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = joystick.c; sourceTree = "<group>"; };
+		E01C34727C77D64A6C028B38 /* cocoa_fullscreen.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = cocoa_fullscreen.m; sourceTree = "<group>"; };
+		E84B219B5E483572F11C5F33 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		E93EC45C13DEF032421FFAB7 /* tga.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = tga.c; sourceTree = "<group>"; };
+		EA58C16CAB3CE5EEC84BDEB1 /* cocoa_glext.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = cocoa_glext.m; sourceTree = "<group>"; };
+		F510DD79AA61D2337E8BCA60 /* internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = internal.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AA5A154C82250285F3A6306A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7C7FC636BE6A7E1AADB4BCE /* OpenGL.framework in Frameworks */,
+				B9EA15529652899A509F6769 /* Cocoa.framework in Frameworks */,
+				A059F201B392CBAAC51D14D8 /* IOKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0DB2AA630153744CC35566EF /* include/GL */ = {
+			isa = PBXGroup;
+			children = (
+				B734A2E3F5CB1966EC1CDCCC /* glfw.h */,
+			);
+			path = include/GL;
+			sourceTree = "<group>";
+		};
+		26F47D4DDB228BF1FBA18488 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C00656DFE737F324A2C5DD19 /* Cocoa.framework */,
+				E84B219B5E483572F11C5F33 /* IOKit.framework */,
+				829DD47984A8B03A6DD86BC5 /* OpenGL.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5795F65B3C885E0A98DFFD2F /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				7C16D7D8364D7C7BADD611DB /* cocoa */,
+				AE030602F53DE21F14BA5FF1 /* enable.c */,
+				A60E6F89E1D336BA944446A8 /* fullscreen.c */,
+				8726D6C9D3B8FFCB3DF6E416 /* glext.c */,
+				03AD84890337A27F100D0A3F /* image.c */,
+				45C2AB8BEB274988F86AA2B8 /* init.c */,
+				1D37B8748775DD2A428398B9 /* input.c */,
+				F510DD79AA61D2337E8BCA60 /* internal.h */,
+				C519264552F7A5BC67DD4E98 /* joystick.c */,
+				A617D66790FA91E1B517AE6B /* stream.c */,
+				E93EC45C13DEF032421FFAB7 /* tga.c */,
+				850104DFCCEC33E61363F8B4 /* thread.c */,
+				4AA0710B170D79B2AC363856 /* time.c */,
+				81402ACE9AFBA33F1184AC4B /* window.c */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		7C16D7D8364D7C7BADD611DB /* cocoa */ = {
+			isa = PBXGroup;
+			children = (
+				3988EC847A700F788F30B3D0 /* cocoa_enable.m */,
+				E01C34727C77D64A6C028B38 /* cocoa_fullscreen.m */,
+				EA58C16CAB3CE5EEC84BDEB1 /* cocoa_glext.m */,
+				70CDF78E2CA38BC103E236FE /* cocoa_init.m */,
+				6000CFFDBB7E0E6176B0B481 /* cocoa_joystick.m */,
+				5058F2DA8720F22CC714F34C /* cocoa_thread.c */,
+				16CDB1554AECEC1D4D13A8B2 /* cocoa_time.m */,
+				8E69E11C91502C5283165935 /* cocoa_window.m */,
+				B6993B54CE70473A71C17B7D /* platform.h */,
+			);
+			path = cocoa;
+			sourceTree = "<group>";
+		};
+		B65F301D2A2515811954EF68 /* Build */ = {
+			isa = PBXGroup;
+			children = (
+				03155BA1B7E5AE5576E636BB /* glfw.gyp */,
+			);
+			name = Build;
+			sourceTree = "<group>";
+		};
+		B750E6998D7CE36165AB7E44 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BD1BF14A8815B97D51E3035D /* libglfw.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E5F5EC05DF9B91D328433CAB /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				0DB2AA630153744CC35566EF /* include/GL */,
+				5795F65B3C885E0A98DFFD2F /* lib */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		E7027F02F6BAB99C307E2762 = {
+			isa = PBXGroup;
+			children = (
+				E5F5EC05DF9B91D328433CAB /* Source */,
+				26F47D4DDB228BF1FBA18488 /* Frameworks */,
+				B750E6998D7CE36165AB7E44 /* Products */,
+				B65F301D2A2515811954EF68 /* Build */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EBEE2EBAE07339EA20D5B859 /* glfw */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2F83AB38CF8E3A6FE74D1B29 /* Build configuration list for PBXNativeTarget "glfw" */;
+			buildPhases = (
+				320A328B5F6F14BE907D657F /* Sources */,
+				AA5A154C82250285F3A6306A /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = glfw;
+			productName = glfw;
+			productReference = BD1BF14A8815B97D51E3035D /* libglfw.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		40DBD71C8ED29E68AFDAA125 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+			};
+			buildConfigurationList = BB57A4CCE0901E67391277E4 /* Build configuration list for PBXProject "glfw" */;
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 1;
+			mainGroup = E7027F02F6BAB99C307E2762;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EBEE2EBAE07339EA20D5B859 /* glfw */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		320A328B5F6F14BE907D657F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4958388072814BCB72ADFF1 /* enable.c in Sources */,
+				8D70DF9374D32D8E111D83B0 /* fullscreen.c in Sources */,
+				13F03520145F70C9810E4DE7 /* glext.c in Sources */,
+				C5F7F89845C77FF4738C4897 /* image.c in Sources */,
+				1CD7F5568A94956C5613D093 /* init.c in Sources */,
+				CB861EB0CF5988F22E8B8C31 /* input.c in Sources */,
+				293E71830638F88FE7290999 /* joystick.c in Sources */,
+				367C445CAAFF59B46FD732A9 /* stream.c in Sources */,
+				9CF6C32F2C59DC4B58952E51 /* tga.c in Sources */,
+				BFE3AFC9A711319C325DD50F /* thread.c in Sources */,
+				EFED022B3E3274E843B82FEE /* time.c in Sources */,
+				BC0E1E39DC95E2106D3D0AE4 /* window.c in Sources */,
+				4EAA03B459178C12736AB3E0 /* cocoa_enable.m in Sources */,
+				5C286501113F95C642D3120A /* cocoa_fullscreen.m in Sources */,
+				3385BF54E3C4EAF222CAB336 /* cocoa_glext.m in Sources */,
+				13AA2D4463520CD351A986A6 /* cocoa_init.m in Sources */,
+				1EDC3B8A6C69AFC13F14DD21 /* cocoa_joystick.m in Sources */,
+				67593282155267E80D683973 /* cocoa_thread.c in Sources */,
+				1A4E5665A517C00178BA9965 /* cocoa_time.m in Sources */,
+				54DFB510C9E388B132D468F8 /* cocoa_window.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		02D270E99EC67366E4D00D6B /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				HEADER_SEARCH_PATHS = (
+					include,
+					include/GL,
+					lib,
+					lib/cocoa,
+				);
+				LIBRARY_SEARCH_PATHS = "$(SDKROOT)/System/Library/Frameworks";
+				PRODUCT_NAME = glfw;
+			};
+			name = Default;
+		};
+		80A98A63E1E4DDEE692B7ABF /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INTERMEDIATE_DIR = "$(PROJECT_DERIVED_FILE_DIR)/$(CONFIGURATION)";
+				SHARED_INTERMEDIATE_DIR = "$(SYMROOT)/DerivedSources/$(CONFIGURATION)";
+			};
+			name = Default;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2F83AB38CF8E3A6FE74D1B29 /* Build configuration list for PBXNativeTarget "glfw" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02D270E99EC67366E4D00D6B /* Default */,
+			);
+			defaultConfigurationIsVisible = 1;
+			defaultConfigurationName = Default;
+		};
+		BB57A4CCE0901E67391277E4 /* Build configuration list for PBXProject "glfw" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80A98A63E1E4DDEE692B7ABF /* Default */,
+			);
+			defaultConfigurationIsVisible = 1;
+			defaultConfigurationName = Default;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 40DBD71C8ED29E68AFDAA125 /* Project object */;
+}
