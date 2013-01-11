@@ -7,9 +7,9 @@
 				'include'
 			],
 			'sources': [
-				'internal.h',
-				'matrix.c',
-				'vector.c',
+				'src/internal.h',
+				'src/matrix.c',
+				'src/vector.c',
 				'common.gypi',
 			],
 			'libraries': [

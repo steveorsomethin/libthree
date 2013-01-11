@@ -6,7 +6,6 @@
 /*
 * three_vec3
 */
-
 #define DEFAULT_VEC3 {10.0f, 20.0f, 30.0f}
 
 TEST(three_vec3_length_sq)
