@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
 #include "internal.h"
@@ -5,6 +6,16 @@
 /*
 * three_vec3
 */
+char *three_vec3_to_str(struct three_vec3 const *a)
+{
+	size_t buf_size = sizeof(char) * 100;
+	char *buf = malloc(buf_size);
+
+	snprintf(buf, buf_size, "{x: %f, y: %f, z: %f}", a->x, a->y, a->z);
+
+	return buf;
+}
+
 float three_vec3_length_sq(struct three_vec3 const *a)
 {
 	return three_vec3_dot(a, a);
@@ -151,6 +162,16 @@ int three_vec3_fuzzy_eq(struct three_vec3 const *a, struct three_vec3 const *b, 
 /*
 * three_vec4
 */
+char *three_vec4_to_str(struct three_vec4 const *a)
+{
+	size_t buf_size = sizeof(char) * 100;
+	char *buf = malloc(buf_size);
+
+	snprintf(buf, buf_size, "{x: %f, y: %f, z: %f, w: %f}", a->x, a->y, a->z, a->w);
+
+	return buf;
+}
+
 float three_vec4_length_sq(struct three_vec4 const *a)
 {
 	return three_vec4_dot(a, a);

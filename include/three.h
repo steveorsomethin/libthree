@@ -12,6 +12,8 @@ struct three_vec3 {
 	float z;
 };
 
+char *three_vec3_to_str(struct three_vec3 const *a);
+
 float three_vec3_length_sq(struct three_vec3 const *a);
 
 float three_vec3_length(struct three_vec3 const *a);
@@ -70,6 +72,8 @@ struct three_vec4 {
 	float w;
 };
 
+char *three_vec4_to_str(struct three_vec4 const *a);
+
 float three_vec4_length_sq(struct three_vec4 const *a);
 
 float three_vec4_length(struct three_vec4 const *a);
@@ -109,6 +113,8 @@ struct three_mat4 {
 	float el[16];
 };
 
+char *three_mat4_to_str(struct three_mat4 const *a);
+
 struct three_mat4 three_mat4(float n11, float n12, float n13, float n14,
 							float n21, float n22, float n23, float n24,
 							float n31, float n32, float n33, float n34,
@@ -140,5 +146,21 @@ void three_mat4_mul_vec3(struct three_mat4 const *m, struct three_vec3 *v);
 void three_mat4_mul_vec4(struct three_mat4 const *m, struct three_vec4 *v);
 
 void three_mat4_rotate_axis(struct three_mat4 const *m, struct three_vec3 *v);
+
+void three_mat4_cross_vec4(struct three_mat4 const *m, struct three_vec4 const *a, struct three_vec4 *v);
+
+float three_mat4_determinant(struct three_mat4 const *m);
+
+void three_mat4_transpose(struct three_mat4 *m);
+
+void three_mat4_get_pos(struct three_mat4 const *m, struct three_vec3 *v);
+
+void three_mat4_set_pos(struct three_mat4 *m, struct three_vec3 const *v);
+
+void three_mat4_get_col_x(struct three_mat4 const *m, struct three_vec3 *v);
+
+void three_mat4_get_col_y(struct three_mat4 const *m, struct three_vec3 *v);
+
+void three_mat4_get_col_z(struct three_mat4 const *m, struct three_vec3 *v);
 
 #endif /* THREE_H */

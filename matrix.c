@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
 #include "internal.h"
@@ -16,6 +17,28 @@ struct three_mat4 three_mat4(float n11, float n12, float n13, float n14,
 			n41, n42, n43, n44);
 
 	return result;
+}
+
+char *three_mat4_to_str(struct three_mat4 const *a)
+{
+	size_t buf_size = sizeof(char) * 100 * 4;
+	char *buf = malloc(buf_size);
+	const float *el = &(a->el[0]);
+
+	snprintf(buf, buf_size, 
+		"{"
+			"m11: %f, m12: %f, m13: %f, m14: %f,"
+			"m21: %f, m22: %f, m23: %f, m24: %f,"
+			"m31: %f, m32: %f, m33: %f, m34: %f,"
+			"m41: %f, m42: %f, m43: %f, m44: %f"
+		"}",
+			el[0], el[4], el[8], el[12],
+			el[1], el[5], el[9], el[13],
+			el[2], el[6], el[10], el[14],
+			el[3], el[7], el[11], el[15]
+		);
+
+	return buf;
 }
 
 void three_mat4_set(struct three_mat4 *mat,
@@ -53,7 +76,7 @@ int three_mat4_eq(struct three_mat4 const *a, struct three_mat4 const *b)
 		}
 	}
 
- 	return 1;
+	return 1;
 }
 
 int three_mat4_fuzzy_eq(struct three_mat4 const *a, struct three_mat4 const *b, const float tolerance)
@@ -194,4 +217,147 @@ void three_mat4_rotate_axis(struct three_mat4 const *m, struct three_vec3 *v)
 	v->z = vx * el[2] + vy * el[6] + vz * el[10];
 
 	three_vec3_normalize(v);
+}
+
+void three_mat4_cross_vec4(struct three_mat4 const *m, struct three_vec4 const *a, struct three_vec4 *v)
+{
+	const float *el = &(m->el[0]);
+
+	v->x = el[0] * a->x + el[4] * a->y + el[8] * a->z + el[12] * a->w;
+	v->y = el[1] * a->x + el[5] * a->y + el[9] * a->z + el[13] * a->w;
+	v->z = el[2] * a->x + el[6] * a->y + el[10] * a->z + el[14] * a->w;
+
+	v->w = a->w > 0.0f ? el[3] * a->x + el[7] * a->y + el[11] * a->z + el[15] * a->w : 1.0f;
+}
+
+float three_mat4_determinant(struct three_mat4 const *m)
+{
+	const float *el = &(m->el[0]);
+
+	float n11 = el[0], n12 = el[4], n13 = el[8], n14 = el[12];
+	float n21 = el[1], n22 = el[5], n23 = el[9], n24 = el[13];
+	float n31 = el[2], n32 = el[6], n33 = el[10], n34 = el[14];
+	float n41 = el[3], n42 = el[7], n43 = el[11], n44 = el[15];
+
+	return (
+		n14 * n23 * n32 * n41-
+		n13 * n24 * n32 * n41-
+		n14 * n22 * n33 * n41+
+		n12 * n24 * n33 * n41+
+
+		n13 * n22 * n34 * n41-
+		n12 * n23 * n34 * n41-
+		n14 * n23 * n31 * n42+
+		n13 * n24 * n31 * n42+
+
+		n14 * n21 * n33 * n42-
+		n11 * n24 * n33 * n42-
+		n13 * n21 * n34 * n42+
+		n11 * n23 * n34 * n42+
+
+		n14 * n22 * n31 * n43-
+		n12 * n24 * n31 * n43-
+		n14 * n21 * n32 * n43+
+		n11 * n24 * n32 * n43+
+
+		n12 * n21 * n34 * n43-
+		n11 * n22 * n34 * n43-
+		n13 * n22 * n31 * n44+
+		n12 * n23 * n31 * n44+
+
+		n13 * n21 * n32 * n44-
+		n11 * n23 * n32 * n44-
+		n12 * n21 * n33 * n44+
+		n11 * n22 * n33 * n44
+	);
+}
+
+void three_mat4_transpose(struct three_mat4 *m)
+{
+	float *el = &(m->el[0]);
+	float tmp;
+
+	tmp = el[1]; el[1] = el[4]; el[4] = tmp;
+	tmp = el[2]; el[2] = el[8]; el[8] = tmp;
+	tmp = el[6]; el[6] = el[9]; el[9] = tmp;
+
+	tmp = el[3]; el[3] = el[12]; el[12] = tmp;
+	tmp = el[7]; el[7] = el[13]; el[13] = tmp;
+	tmp = el[11]; el[11] = el[14]; el[14] = tmp;
+}
+
+void three_mat4_get_pos(struct three_mat4 const *m, struct three_vec3 *v)
+{
+	const float *el = &(m->el[0]);
+
+	v->x = el[12];
+	v->y = el[13];
+	v->z = el[14];
+}
+
+void three_mat4_set_pos(struct three_mat4 *m, struct three_vec3 const *v)
+{
+	float *el = &(m->el[0]);
+
+	el[12] = v->x;
+	el[13] = v->y;
+	el[14] = v->z;
+}
+
+void three_mat4_get_col_x(struct three_mat4 const *m, struct three_vec3 *v)
+{
+	const float *el = &(m->el[0]);
+
+	v->x = el[0];
+	v->y = el[1];
+	v->z = el[2];
+}
+
+void three_mat4_get_col_y(struct three_mat4 const *m, struct three_vec3 *v)
+{
+	const float *el = &(m->el[0]);
+
+	v->x = el[4];
+	v->y = el[5];
+	v->z = el[6];
+}
+
+void three_mat4_get_col_z(struct three_mat4 const *m, struct three_vec3 *v)
+{
+	const float *el = &(m->el[0]);
+
+	v->x = el[8];
+	v->y = el[9];
+	v->z = el[10];
+}
+
+void three_mat4_invert(struct three_mat4 *m)
+{
+	float *el = &(m->el[0]);
+
+	float n11 = el[0], n12 = el[4], n13 = el[8], n14 = el[12];
+	float n21 = el[1], n22 = el[5], n23 = el[9], n24 = el[13];
+	float n31 = el[2], n32 = el[6], n33 = el[10], n34 = el[14];
+	float n41 = el[3], n42 = el[7], n43 = el[11], n44 = el[15];
+
+	float m_det = three_mat4_determinant(m);
+
+	el[0] = n23*n34*n42 - n24*n33*n42 + n24*n32*n43 - n22*n34*n43 - n23*n32*n44 + n22*n33*n44;
+	el[4] = n14*n33*n42 - n13*n34*n42 - n14*n32*n43 + n12*n34*n43 + n13*n32*n44 - n12*n33*n44;
+	el[8] = n13*n24*n42 - n14*n23*n42 + n14*n22*n43 - n12*n24*n43 - n13*n22*n44 + n12*n23*n44;
+	el[12] = n14*n23*n32 - n13*n24*n32 - n14*n22*n33 + n12*n24*n33 + n13*n22*n34 - n12*n23*n34;
+	el[1] = n24*n33*n41 - n23*n34*n41 - n24*n31*n43 + n21*n34*n43 + n23*n31*n44 - n21*n33*n44;
+	el[5] = n13*n34*n41 - n14*n33*n41 + n14*n31*n43 - n11*n34*n43 - n13*n31*n44 + n11*n33*n44;
+	el[9] = n14*n23*n41 - n13*n24*n41 - n14*n21*n43 + n11*n24*n43 + n13*n21*n44 - n11*n23*n44;
+	el[13] = n13*n24*n31 - n14*n23*n31 + n14*n21*n33 - n11*n24*n33 - n13*n21*n34 + n11*n23*n34;
+	el[2] = n22*n34*n41 - n24*n32*n41 + n24*n31*n42 - n21*n34*n42 - n22*n31*n44 + n21*n32*n44;
+	el[6] = n14*n32*n41 - n12*n34*n41 - n14*n31*n42 + n11*n34*n42 + n12*n31*n44 - n11*n32*n44;
+	el[10] = n12*n24*n41 - n14*n22*n41 + n14*n21*n42 - n11*n24*n42 - n12*n21*n44 + n11*n22*n44;
+	el[14] = n14*n22*n31 - n12*n24*n31 - n14*n21*n32 + n11*n24*n32 + n12*n21*n34 - n11*n22*n34;
+	el[3] = n23*n32*n41 - n22*n33*n41 - n23*n31*n42 + n21*n33*n42 + n22*n31*n43 - n21*n32*n43;
+	el[7] = n12*n33*n41 - n13*n32*n41 + n13*n31*n42 - n11*n33*n42 - n12*n31*n43 + n11*n32*n43;
+	el[11] = n13*n22*n41 - n12*n23*n41 - n13*n21*n42 + n11*n23*n42 + n12*n21*n43 - n11*n22*n43;
+	el[15] = n12*n23*n31 - n13*n22*n31 + n13*n21*n32 - n11*n23*n32 - n12*n21*n33 + n11*n22*n33;
+
+	three_mat4_mul_scalar(m, 1 / (m_det ? m_det : 0.000001f));
 }

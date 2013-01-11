@@ -1,6 +1,6 @@
 #ifndef INTERNAL_H
 #define INTERNAL_H
 
-#include "include/three.h"
+#include <three.h>
 
 #endif //INTERNAL_H
