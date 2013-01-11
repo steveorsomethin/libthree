@@ -344,6 +344,19 @@ TEST(three_vec4_fuzzy_eq)
 	TEST_ASSERT(result);
 }
 
+/*
+* three_mat4
+*/
+struct three_mat4 default_mat4()
+{
+	return three_mat4(
+		1.0f, 2.0f, 3.0f, 4.0f,
+		5.0f, 6.0f, 7.0f, 8.0f,
+		9.0f, 10.0f, 11.0f, 12.0f,
+		13.0f, 14.0f, 15.0f, 16.0f
+	);
+}
+
 TEST(three_mat4_identity)
 {
 	struct three_mat4 mat1 = three_mat4(
@@ -359,12 +372,7 @@ TEST(three_mat4_identity)
 
 TEST(three_mat4_fuzzy_eq)
 {
-	struct three_mat4 mat1 = three_mat4(
-		1.0f, 0.0f, 0.0f, 0.0f,
-		0.0f, 1.0f, 0.0f, 0.0f,
-		0.0f, 0.0f, 1.0f, 0.0f,
-		0.0f, 0.0f, 0.0f, 1.0f
-	);
+	struct three_mat4 mat1 = three_mat4_identity();
 
 	struct three_mat4 mat2 = three_mat4(
 		1.1f, 0.0f, 0.0f, 0.0f,
@@ -397,12 +405,8 @@ TEST(three_mat4_look_at)
 
 TEST(three_mat4_mul)
 {
-	struct three_mat4 mat1 = three_mat4(
-		1.0f, 2.0f, 3.0f, 4.0f,
-		5.0f, 6.0f, 7.0f, 8.0f, 
-		9.0f, 10.0f, 11.0f, 12.0f, 
-		13.0f, 14.0f, 15.0f, 16.0f
-	);
+	struct three_mat4 mat1 = default_mat4();
+
 	struct three_mat4 mat2 = mat1;
 	struct three_mat4 assert_mat = three_mat4(
 		90.0f, 100.0f, 110.0f, 120.0f,
@@ -418,12 +422,7 @@ TEST(three_mat4_mul)
 
 TEST(three_mat4_mul_scalar)
 {
-	struct three_mat4 mat1 = three_mat4(
-		1.0f, 2.0f, 3.0f, 4.0f,
-		5.0f, 6.0f, 7.0f, 8.0f,
-		9.0f, 10.0f, 11.0f, 12.0f,
-		13.0f, 14.0f, 15.0f, 16.0f
-	);
+	struct three_mat4 mat1 = default_mat4();
 
 	struct three_mat4 assert_mat = three_mat4(
 		2.0f, 4.0f, 6.0f, 8.0f,
@@ -439,12 +438,7 @@ TEST(three_mat4_mul_scalar)
 
 TEST(three_mat4_mul_vec3)
 {
-	struct three_mat4 mat1 = three_mat4(
-		1.0f, 2.0f, 3.0f, 4.0f,
-		5.0f, 6.0f, 7.0f, 8.0f,
-		9.0f, 10.0f, 11.0f, 12.0f,
-		13.0f, 14.0f, 15.0f, 16.0f
-	);
+	struct three_mat4 mat1 = default_mat4();
 
 	struct three_vec3 vec1 = {10.0f, 20.0f, 30.0f};
 	struct three_vec3 assert_vec = {0.1643835616438356f, 0.4429223744292237f, 0.7214611872146118f};
@@ -456,12 +450,7 @@ TEST(three_mat4_mul_vec3)
 
 TEST(three_mat4_mul_vec4)
 {
-	struct three_mat4 mat1 = three_mat4(
-		1.0f, 2.0f, 3.0f, 4.0f,
-		5.0f, 6.0f, 7.0f, 8.0f,
-		9.0f, 10.0f, 11.0f, 12.0f,
-		13.0f, 14.0f, 15.0f, 16.0f
-	);
+	struct three_mat4 mat1 = default_mat4();
 
 	struct three_vec4 vec1 = {10.0f, 20.0f, 30.0f, 40.f};
 	struct three_vec4 assert_vec = {300.0f, 700.0f, 1100.0f, 1500.0f};
@@ -473,12 +462,7 @@ TEST(three_mat4_mul_vec4)
 
 TEST(three_mat4_rotate_axis)
 {
-	struct three_mat4 mat1 = three_mat4(
-		1.0f, 2.0f, 3.0f, 4.0f,
-		5.0f, 6.0f, 7.0f, 8.0f,
-		9.0f, 10.0f, 11.0f, 12.0f,
-		13.0f, 14.0f, 15.0f, 16.0f
-	);
+	struct three_mat4 mat1 = default_mat4();
 
 	struct three_vec3 vec1 = {10.0f, 20.0f, 30.0f};
 	struct three_vec3 assert_vec = {0.18905114525312228f, 0.5131388228299033f, 0.8372265004066844f};
@@ -490,12 +474,7 @@ TEST(three_mat4_rotate_axis)
 
 TEST(three_mat4_cross_vec4)
 {
-	struct three_mat4 mat1 = three_mat4(
-		1.0f, 2.0f, 3.0f, 4.0f,
-		5.0f, 6.0f, 7.0f, 8.0f,
-		9.0f, 10.0f, 11.0f, 12.0f,
-		13.0f, 14.0f, 15.0f, 16.0f
-	);
+	struct three_mat4 mat1 = default_mat4();
 
 	struct three_vec4 vec1 = {10.0f, 20.0f, 30.0f, 40.f};
 	struct three_vec4 vec2;
@@ -522,12 +501,7 @@ TEST(three_mat4_determinant)
 
 TEST(three_mat4_transpose)
 {
-	struct three_mat4 mat1 = three_mat4(
-		1.0f, 2.0f, 3.0f, 4.0f,
-		5.0f, 6.0f, 7.0f, 8.0f,
-		9.0f, 10.0f, 11.0f, 12.0f,
-		13.0f, 14.0f, 15.0f, 16.0f
-	);
+	struct three_mat4 mat1 = default_mat4();
 
 	struct three_mat4 assert_mat = three_mat4(
 		1.0f, 5.0f, 9.0f, 13.0f,
@@ -543,12 +517,7 @@ TEST(three_mat4_transpose)
 
 TEST(three_mat4_get_pos)
 {
-	struct three_mat4 mat1 = three_mat4(
-		1.0f, 2.0f, 3.0f, 4.0f,
-		5.0f, 6.0f, 7.0f, 8.0f,
-		9.0f, 10.0f, 11.0f, 12.0f,
-		13.0f, 14.0f, 15.0f, 16.0f
-	);
+	struct three_mat4 mat1 = default_mat4();
 
 	struct three_vec3 vec1;
 	struct three_vec3 assert_vec = {4.0f, 8.0f, 12.0f};
@@ -560,12 +529,7 @@ TEST(three_mat4_get_pos)
 
 TEST(three_mat4_set_pos)
 {
-	struct three_mat4 mat1 = three_mat4(
-		1.0f, 2.0f, 3.0f, 4.0f,
-		5.0f, 6.0f, 7.0f, 8.0f,
-		9.0f, 10.0f, 11.0f, 12.0f,
-		13.0f, 14.0f, 15.0f, 16.0f
-	);
+	struct three_mat4 mat1 = default_mat4();
 
 	struct three_vec3 vec1 = {8.0f, 16.0f, 24.0f};
 
@@ -574,7 +538,7 @@ TEST(three_mat4_set_pos)
 		5.0f, 6.0f, 7.0f, 16.0f,
 		9.0f, 10.0f, 11.0f, 24.0f,
 		13.0f, 14.0f, 15.0f, 16.0f
-	);;
+	);
 
 	three_mat4_set_pos(&mat1, &vec1);
 
@@ -583,12 +547,7 @@ TEST(three_mat4_set_pos)
 
 TEST(three_mat4_get_col_x)
 {
-	struct three_mat4 mat1 = three_mat4(
-		1.0f, 2.0f, 3.0f, 4.0f,
-		5.0f, 6.0f, 7.0f, 8.0f,
-		9.0f, 10.0f, 11.0f, 12.0f,
-		13.0f, 14.0f, 15.0f, 16.0f
-	);
+	struct three_mat4 mat1 = default_mat4();
 
 	struct three_vec3 vec1;
 	struct three_vec3 assert_vec = {1.0f, 5.0f, 9.0f};
@@ -600,12 +559,7 @@ TEST(three_mat4_get_col_x)
 
 TEST(three_mat4_get_col_y)
 {
-	struct three_mat4 mat1 = three_mat4(
-		1.0f, 2.0f, 3.0f, 4.0f,
-		5.0f, 6.0f, 7.0f, 8.0f,
-		9.0f, 10.0f, 11.0f, 12.0f,
-		13.0f, 14.0f, 15.0f, 16.0f
-	);
+	struct three_mat4 mat1 = default_mat4();
 
 	struct three_vec3 vec1;
 	struct three_vec3 assert_vec = {2.0f, 6.0f, 10.0f};
@@ -617,12 +571,7 @@ TEST(three_mat4_get_col_y)
 
 TEST(three_mat4_get_col_z)
 {
-	struct three_mat4 mat1 = three_mat4(
-		1.0f, 2.0f, 3.0f, 4.0f,
-		5.0f, 6.0f, 7.0f, 8.0f,
-		9.0f, 10.0f, 11.0f, 12.0f,
-		13.0f, 14.0f, 15.0f, 16.0f
-	);
+	struct three_mat4 mat1 = default_mat4();
 
 	struct three_vec3 vec1;
 	struct three_vec3 assert_vec = {3.0f, 7.0f, 11.0f};
@@ -635,7 +584,7 @@ TEST(three_mat4_get_col_z)
 int main()
 {
 	START_TESTS
-	
+
 		//Vector
 		TEST_ADD(three_vec3_length_sq)
 		TEST_ADD(three_vec3_length)
